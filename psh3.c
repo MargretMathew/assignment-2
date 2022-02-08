@@ -32,12 +32,12 @@ int main()
 				
 				arglist[numargs] = NULL;
 				
-				if(count++<1){
-					printf("No history\n");
-					numargs = 0;
-					continue;
-				}
 				if(strcmp(*arglist,"!!")==0){
+					if(count<1){
+						printf("No history\n");
+						numargs = 0;
+						continue;
+					}
 					printf("history: %s\n",*history);
 					execute(history);
 				}
@@ -49,6 +49,7 @@ int main()
 					// count=0;
 				}
 				numargs = 0;
+				count++;
 			}
 		}
 	}
