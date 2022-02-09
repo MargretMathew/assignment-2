@@ -46,6 +46,9 @@ int main()
 				}
 				if(strcmp(*arglist,"!!")!=0){
 					*history = *arglist;
+					// for(int i=0;i<numargs;i++){
+					// 	*history[i] = makestring(arglist[i]);
+					// }
 					// count=0;
 				}
 				numargs = 0;
