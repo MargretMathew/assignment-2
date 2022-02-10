@@ -37,7 +37,7 @@ int main()
 				
 				if(strcmp(*arglist,"!!")==0){
 					if(count<1){
-						printf("No history\n");
+						printf("No commands in history\n");
 						numargs = 0;
 						continue;
 					}
