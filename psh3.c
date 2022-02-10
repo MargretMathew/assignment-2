@@ -18,11 +18,14 @@ int main()
 	char argbuf[ARGLEN];
 	char *makestring();
 	int count = 0;
+	
 	numargs = 0;
+	
 	while (numargs < MAXARGS)
 	{
 		printf("Arg[%d]? ", numargs);
 		if (fgets(argbuf, ARGLEN, stdin) && *argbuf != '\n')
+		// Entered command eg:ls Arg[0] increment to Arg[1] becaz did an input and not !='\n'
 			arglist[numargs++] = makestring(argbuf);
 		else
 		{
