@@ -25,7 +25,6 @@ int main()
 	{
 		printf("Arg[%d]? ", numargs);
 		if (fgets(argbuf, ARGLEN, stdin) && *argbuf != '\n')
-		// Entered command eg:ls Arg[0] increment to Arg[1] becaz did an input and not !='\n'
 			arglist[numargs++] = makestring(argbuf);
 		else
 		{
@@ -49,10 +48,6 @@ int main()
 				}
 				if(strcmp(*arglist,"!!")!=0){
 					*history = *arglist;
-					// for(int i=0;i<numargs;i++){
-					// 	*history[i] = makestring(arglist[i]);
-					// }
-					// count=0;
 				}
 				numargs = 0;
 				count++;
@@ -82,7 +77,6 @@ void execute(char *arglist[])
 }
 char *makestring(char *buf)
 {
-	// char *cp, *malloc();
 	buf[strlen(buf) - 1] = '\0';
 	void *const cp = malloc(strlen(buf) + 1);
 	if (cp == NULL)
